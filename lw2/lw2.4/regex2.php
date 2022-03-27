@@ -1,9 +1,9 @@
 <?php
-
+//функция возвращает новую строчку
 function changeString($matches){
-    $newString=preg_split('#http://asozd\.duma\.gov\.ru/main\.nsf/\(Spravka\)\?OpenAgent&RN=#', $matches[0]);
-    $newString=preg_split('#&#', $newString[1]);
-    $matches='http://sozd.parlament.gov.ru/bill/'.$newString[0];
+    $newString=preg_split('#http://asozd\.duma\.gov\.ru/main\.nsf/\(Spravka\)\?OpenAgent&RN=#', $matches[0]);//отделяем ссылку
+    $newString=preg_split('#&#', $newString[1]);//отделяем номер законопроекта
+    $matches='http://sozd.parlament.gov.ru/bill/'.$newString[0];//дописываем номер в нашу новую строчку
     return $matches;
 }
 
