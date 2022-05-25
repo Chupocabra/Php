@@ -56,9 +56,9 @@ function compareAnswers($i, $result, $outputFile): bool
     $answer=file_get_contents($outputFile);
     $number=$i+1;
     echo "\n$number. ";
-//    echo "\tМой ответ\n".$result;
-//    echo "\tПравильный ответ\n".$answer."\n";
     if ($answer!=$result) {
+        echo "\tМой ответ\n".$result;
+        echo "\tПравильный ответ\n".$answer."\n";
         return false;
     } else {
         return true;

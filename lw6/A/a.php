@@ -53,10 +53,10 @@ function compare_lines($number, $outputFile, $result): bool
     $answer=file_get_contents($outputFile);
     $number+=1;
     echo "\n$number. ";
-//    echo "\n\t$number Решение\n".trim($result);
-//    echo "\n\t$number Ответ\n".$answer."\n";
     $flag=true;//метка, показывает успешность сравнения
     if (trim($result)!=$answer) {//если есть ошибка
+        echo "\n\t$number Решение\n".trim($result);
+        echo "\n\t$number Ответ\n".$answer."\n";
         $flag=false;//вернем false
     }
     return $flag;//ошибок не найдено, вернем true
